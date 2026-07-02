@@ -20,13 +20,7 @@
     "name": "Get API Key",
     "url": "https://railswitch-gateway.fly.dev"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference/overview",
-      "openapi": "https://railswitch-gateway.fly.dev/openapi.json"
-    }
-  ],
+  "tabs": [],
   "navigation": [
     {
       "group": "Getting Started",
@@ -57,9 +51,27 @@
       "pages": [
         "api-reference/overview"
       ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        {
+          "group": "Overview",
+          "pages": [
+            "api-reference/overview"
+          ]
+        }
+      ]
     }
   ],
   "footerSocials": {
     "github": "https://github.com/mayowa-sys/railswitch"
-  }
+  },
+  "anchors": [
+    {
+      "name": "API Reference (Live)",
+      "icon": "code",
+      "url": "https://railswitch-gateway.fly.dev/redoc"
+    }
+  ]
 }
