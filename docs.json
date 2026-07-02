@@ -41,14 +41,7 @@
       },
       {
         "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Reference",
-            "pages": [
-              "api-reference/openapi.json"
-            ]
-          }
-        ]
+        "groups": []
       }
     ]
   },
