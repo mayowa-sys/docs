@@ -24,7 +24,7 @@
     {
       "name": "API Reference",
       "url": "api-reference/overview",
-      "openapi": "/api-reference/openapi.json"
+      "openapi": "https://railswitch-gateway.fly.dev/openapi.json"
     }
   ],
   "navigation": [
