@@ -1,47 +1,90 @@
 ---
 title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+description: "Get up and running with RailSwitch in minutes"
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+## 1. Get Your API Key
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+Sign up at the [RailSwitch Dashboard](https://railswitch-gateway.fly.dev) to get your API key. You'll receive a test key (`sk_test_...`) to use during development.
 
-## Prerequisites
+## 2. Install the SDK
 
-Before you begin, you must have:
+**Python:**
+```bash
+pip install railswitch
+```
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+**Node.js:**
+```bash
+npm install @railswitch/node
+```
 
-## Get started
+## 3. Create a Customer
 
-<Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+```python
+from railswitch import RailSwitch
 
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+client = RailSwitch(api_key="sk_test_...")
 
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+customer = client.customers.create(
+    email="john@example.com",
+    name="John Doe",
+)
+print(customer.id)
+```
 
-    ```bash
-    your-cli start
-    ```
-  </Step>
-</Steps>
+```javascript
+import { RailSwitch } from "@railswitch/node";
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+const client = new RailSwitch({ apiKey: "sk_test_..." });
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+const customer = await client.customers.create({
+  email: "john@example.com",
+  name: "John Doe",
+});
+console.log(customer.id);
+```
+
+## 4. Create a Plan
+
+```python
+plan = client.plans.create(
+    name="Pro Monthly",
+    amount=15000,
+    interval="monthly",
+    interval_count=1,
+)
+```
+
+```javascript
+const plan = await client.plans.create({
+  name: "Pro Monthly",
+  amount: 15000,
+  interval: "monthly",
+  interval_count: 1,
+});
+```
+
+## 5. Subscribe the Customer
+
+```python
+subscription = client.subscriptions.create(
+    customer_id=customer.id,
+    plan_id=plan.id,
+    start_date="2026-07-01T00:00:00Z",
+)
+```
+
+```javascript
+const subscription = await client.subscriptions.create({
+  customer_id: customer.id,
+  plan_id: plan.id,
+  start_date: "2026-07-01T00:00:00Z",
+});
+```
+
+## Next Steps
+
+- Read about [subscriptions](/concepts/subscriptions), [plans](/concepts/plans), and [proration](/concepts/proration)
+- Explore the [API Reference](/api-reference)
+- Set up [webhooks](/webhooks/events) to receive real-time events
