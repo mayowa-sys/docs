@@ -14,19 +14,17 @@
     {
       "name": "Dashboard",
       "url": "https://railswitch-gateway.fly.dev"
+    },
+    {
+      "name": "API Reference",
+      "url": "https://railswitch-gateway.fly.dev/redoc"
     }
   ],
   "topbarCtaButton": {
     "name": "Get API Key",
     "url": "https://railswitch-gateway.fly.dev"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference/overview",
-      "openapi": "api-reference/openapi.json"
-    }
-  ],
+  "tabs": [],
   "navigation": [
     {
       "group": "Getting Started",
@@ -50,12 +48,6 @@
       "pages": [
         "webhooks/events",
         "webhooks/delivery"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api-reference/overview"
       ]
     }
   ],
